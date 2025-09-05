@@ -139,6 +139,10 @@ body {
   letter-spacing: -0.02em;
 }
 
+body.hidden{
+  overflow: hidden;
+}
+
 header {
   background: rgba(163, 66, 153, 1);
   position: relative;
@@ -318,16 +322,18 @@ nav li a {
   text-decoration: none;
 }
 
-nav.fixed{
-   position: fixed !important;
+
+nav.navbar {
+  position: fixed !important;
    width: 100%;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  transition: all 0.3s ease 0s;
 }
 
-nav.fixed::after{
+nav.navbar::after{
   content: '';
   position: absolute;
   top: 0;
@@ -337,6 +343,12 @@ nav.fixed::after{
    background-color:rgba(224, 224, 224, .2);
   backdrop-filter: blur(10px);
   z-index: -1;
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+
+nav.fixed::after{
+  opacity: 1;
 }
 
 nav .container-fluid{
@@ -366,6 +378,10 @@ a.reg-lnk-2:hover{
   padding-top: 88px;
   /* Скрываем артефактную полоску между header и секцией #about */
   margin-top: -1px;
+}
+
+.about .swiper-buttons{
+  display: none;
 }
 
 
@@ -748,6 +764,17 @@ footer .img-fluid{
 
 }
 
+@media screen and (min-width: 577px) and (max-width: 1023px) {
+  .about-swiper .swiper-slide {
+    max-width: 400px; /* Ограничиваем ширину блока, чтобы он не растягивался */
+    margin-left: auto;   /* Автоматический отступ слева */
+    margin-right: auto;  /* Автоматический отступ справа */
+  }
+  .about-swiper .swiper-wrapper{
+    display: block !important;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .show-mobile {
     display:block;
@@ -760,6 +787,12 @@ footer .img-fluid{
   .show-desktop {
     display:none;
   }
+
+  .about .show-mobile .gravitas-regular {
+    font-size: 18px;
+  }
+
+
 
   .parties_car .swiper-slide{
     width: calc(33% - 32px) !important;
@@ -831,12 +864,10 @@ footer .img-fluid{
   /* По желанию спрятать полосу прокрутки */
   .future-cards::-webkit-scrollbar { display: none; }
   .swiper-buttons {
-    padding: 28px 7px !important;
+    padding: 28px 20px !important;
     margin-bottom: -93px !important;
   }
-  .swiper-buttons .btn-prev {
-    margin-right: 12px;
-  }
+ 
   #about,
   #past,
   #promo-code,
@@ -859,14 +890,40 @@ footer .img-fluid{
 }
 
 @media screen and (max-width: 768px){
-  nav .container-fluid{
-  padding: 0 20px;
-}
-  .burger{
-    display: flex !important;
-  }
+    nav .container-fluid{
+      padding: 0 20px;
+    }
+    .burger{
+      display: flex !important;
+    }
     .parties_car .swiper-slide{
+      padding: 0 !important;
       width: calc(50% - 32px) !important;
+      height: unset;
+    }
+
+    .about-swiper .swiper-slide{
+      width: calc(60% - 32px) !important;
+    }
+
+    .about-swiper{
+      margin-right: -12px !important;
+    }
+
+    .about .swiper-buttons{
+      display: flex;
+    }
+
+    .about-swiper .swiper-wrapper, .about-swiper .swiper-slide{
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+    .about-swiper .swiper-slide img{
+      height: 100%;
+    }
+
+    .about-swiper .swiper-wrapper{
+      display: flex !important;
     }
 
     #menu{
@@ -947,6 +1004,10 @@ footer .img-fluid{
     .parties_car .swiper-slide{
       width: calc(100% - 32px) !important;
     }
+    
+    .about-swiper .swiper-slide{
+      width: calc(80% - 32px) !important;
+    }
 
     .mb-2.pt-3{
       font-size: 42px !important;
@@ -960,11 +1021,37 @@ footer .img-fluid{
     header{
       min-height: 100%;
     }
+
+    .verticals-list{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .verticals-list .bubble {
+      width: fit-content;
+      display: flex;
+      justify-self: flex-start; 
+    }
+
+    .verticals-list .bubble:nth-child(odd) {
+      justify-self: flex-end; 
+    }
+    .promo-code{
+      display: none;
+    }
+}
+
+@media screen and (max-width: 472px){
+    .about-swiper .swiper-slide{
+      width: calc(100% - 32px) !important;
+    }
 }
 
 
 @media screen and (min-width: 1023px) {
   .show-mobile {
-    display:none;
+    display:none !important;
   }
 }
+
+
