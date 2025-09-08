@@ -443,11 +443,36 @@ h4 {
   background: conic-gradient(from 177.3deg at 81.81% 50%, #E3ADE8 0deg, #E97FC7 64.04deg, #A24198 186.92deg, #C995BE 283.85deg, #E3ADE8 360deg);
   z-index: 10;
 }
+.about .card-3::after{
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #ED5385;
+  border-radius: 50%;
+  top: 58%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.about .card-3::before{
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 200px;
+  background-color: #A34299;
+  top: 55%;
+  right: -14%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
 
 .about .card-3 img {
   position: absolute;
-  right: 0;
-  bottom: 3%;
+  right: -13%;
+  bottom: 9%;
 }
 
 .about .card-4 {
@@ -621,6 +646,11 @@ h4 {
 .traffistars .row{
   position: relative;
   z-index: 1;
+}
+.verticals-list{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
 }
 .star{
   position: absolute;
