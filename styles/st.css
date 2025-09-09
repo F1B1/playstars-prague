@@ -576,6 +576,72 @@ h4 {
   border-radius: 100px;
 }
 
+.follow{
+      display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('../assets/images/follow-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.follow__body{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.follow__logo{
+  margin-bottom: 24px;
+  display: flex;
+}
+.follow__text{
+  font-weight: 500;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.follow__socials{
+  display: flex;
+  align-items:center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.follow__socials a img{
+  width: 20px;
+  height: 20px;
+}
+.follow__socials a{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  gap: 8px;
+  transition: all 0.3s ease 0s;
+  padding: 10px 12px;
+}
+.follow__socials a:hover{
+  color: #E0E9FF;
+}
 
 .future-cards__copy{
   display: flex;
@@ -1078,6 +1144,18 @@ footer .img-fluid{
 
     footer .show-mobile{
       display: block !important;
+    }
+
+    .follow__text{
+      margin-bottom: 32px;
+    }
+
+    .follow__socials{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .follow__socials a{
+      font-size: 16px;
     }
 }
 
