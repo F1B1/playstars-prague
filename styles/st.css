@@ -1,3 +1,9 @@
+:root{
+  --cards: 4;
+  --cardHeight: 360px;
+  --cardTopPd: 100px;
+}
+
 @font-face {
   font-family: "Stolzl-Thin";
   src: url("../assets/fonts/Stolzl-Thin.otf") format("opentype");
@@ -106,12 +112,14 @@
 .stl-bold {
   font-family: "Stolzl-Bold";
 }
-
 .stl-light {
   font-family: "Stolzl-Light";
 }
 .stl-regular {
   font-family: "Stolzl-Regular";
+}
+.stl-book {
+  font-family: "Stolzl-Book";
 }
 
 .gravitas-regular {
@@ -228,7 +236,7 @@ h2{
   padding: 0 0px 0 6px;
   background-color: #FFFFFF;
   transition: all 0.3s ease 0s;
-
+  border-radius: 8px;
 }
 
 .party_card .blue_btn:hover{
@@ -268,7 +276,7 @@ a {
   color: #9FB7FF;
   font-weight: 400;
   line-height: 17px;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
   text-align: left;
   margin-bottom: 8px;
 }
@@ -283,9 +291,10 @@ a {
 .party_card_desc span {
   color: #fff;
   font-weight: 400;
-  line-height: 17px;
-  letter-spacing: -2%;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   text-align: left;
+  display: block;
 }
 
 header nav{
@@ -299,16 +308,19 @@ nav.navbar {
 header .star-1{
   left: 100px;
   top: 40px;
+  animation:moveStar1 15s infinite linear;
 }
 
 header .star-2{
   right: 100px;
   bottom: 20%;
+  animation:moveStar2 20s infinite linear;
 }
 
 header .star-3{
   left: 200px;
   bottom: 30px;
+  animation:moveStar3 10s infinite linear;
 }
 
 
@@ -319,6 +331,7 @@ nav a.reg-lnk {
   padding: 9.5px 14.5px;
   text-decoration: none;
   line-height: 17px;
+  border-radius: 12px;
 }
 
 nav a.reg-lnk:hover{
@@ -376,6 +389,12 @@ a.reg-lnk-2 {
   letter-spacing: -0.02em;
   transition: all 0.3s ease 0s;
   background-color: #FF550C;
+  border-radius: 12px;
+  display: flex !important;
+  justify-content:center;align-items: center;
+  max-width: 212px;
+  margin: 0px auto;
+  
 }
 
 a.reg-lnk-2:hover{
@@ -383,9 +402,8 @@ a.reg-lnk-2:hover{
 }
 
 .about {
-  padding-top: 1px;
-  /* Скрываем артефактную полоску между header и секцией #about */
-  margin-top: -1px;
+  padding-top: 80px;
+
 }
 
 .about .swiper-buttons{
@@ -421,7 +439,11 @@ h4 {
 }
 
 
-
+.about .row img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .about .card-1 {
   margin-top: 9px;
   min-height: 550px;
@@ -549,6 +571,7 @@ h4 {
   padding: 11px 12px;
   font-size: 14px !important;
   background: white;
+  border-radius: 8px;
 }
 
 .follow-socials button {
@@ -566,6 +589,7 @@ h4 {
 
 .learn-link {
   display:flex;
+  justify-content:center;align-items: center;
   width: 299px;
   height: 40px;
   color:white;
@@ -573,6 +597,8 @@ h4 {
   font-size: 14px;
   transition: all 0.3s ease 0s;
   background-color: #1F00FF;
+  border-radius: 12px;
+  min-height: 48px;
 }
 
 .learn-link:hover{
@@ -700,6 +726,7 @@ h4 {
   justify-content:center;align-items: center;
   background-color: #fff !important;
   transition: all 0.3s ease 0s;
+  border-radius: 8px;
 }
 
 .swiper-buttons button:hover{
@@ -720,6 +747,7 @@ h4 {
 .traffistars{
   overflow: hidden;
   color: #000;
+  margin-bottom: 36px;
 }
 .traffistars .row{
   position: relative;
@@ -734,6 +762,57 @@ h4 {
   gap: 8px;
   justify-content: center;
 }
+.traffistars .star-1{
+  top: 70px;
+  left: 30px;
+}
+.traffistars .star-2{
+  bottom: 100px;
+  right: 0;
+  width: fit-content;
+  z-index: -1;
+}
+.traffistars .star-3{
+  bottom: -100px;
+  right: 20%;
+  width: fit-content;
+  z-index: -1;
+}
+.traffistars-list{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.traffistars__wrapper{
+  flex: 0 1 33.3333%;
+}
+.traffistars__wrapper:not(:last-child){
+  border-right: 1px solid #000;
+}
+.traffistars__wrapper:last-child h3{
+  font-size: 38px;
+}
+.traffistars__item{
+  max-width: 300px;
+  margin: 0px auto;
+}
+.traffistars__item h3{
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.traffistars__item .traffistars__subtitle{
+  color: #1f00ff;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.traffistars__item .traffistars__text{
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
 .star{
   position: absolute;
   z-index: 2;
@@ -745,8 +824,8 @@ h4 {
 
 .burger {
 
-  width: 48px;
-  height: 48px;
+  width: 20px;
+  height: 20px;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -754,14 +833,13 @@ h4 {
   cursor: pointer;
   z-index: 1001;
   position: relative;
-  background: #FF550C;
   gap: 4px;
 }
 
 .burger span {
   display: block;
   width: 20px;
-  height: 3px;
+  height: 2px;
   background: #fff;
   border-radius: 2px;
   transition: 0.3s;
@@ -843,6 +921,18 @@ header nav .col-md-8.down .navbar-nav{
   }
 }
 
+@-webkit-keyframes scroll {
+   from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    to {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+}
+
 @keyframes scroll {
    from {
         -webkit-transform: translateX(0);
@@ -855,10 +945,53 @@ header nav .col-md-8.down .navbar-nav{
     }
 }
 
+@-webkit-keyframes moveStar1{
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(-55px, 55px) rotate(8deg); }
+  50%  { transform: translate(-55px, 90px) rotate(20deg); }
+  75%  { transform: translate(-55px, 55px) rotate(8deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes moveStar1{
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(-55px, 55px) rotate(8deg); }
+  50%  { transform: translate(-55px, 90px) rotate(20deg); }
+  75%  { transform: translate(-55px, 55px) rotate(8deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@-webkit-keyframes moveStar2{
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(55px, -55px) rotate(10deg); }
+  50%  { transform: translate(90px, -55px) rotate(20deg); }
+  75%  { transform: translate(55px, -55px) rotate(10deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes moveStar2{
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(55px, -55px) rotate(10deg); }
+  50%  { transform: translate(90px, -55px) rotate(20deg); }
+  75%  { transform: translate(55px, -55px) rotate(10deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+
+@-webkit-keyframes moveStar3{
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(30px, -85px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes moveStar3{
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(30px, -85px); }
+  100% { transform: translate(0, 0); }
+}
+
 
 
 footer{
   overflow: hidden;
+  position: relative;
 }
 footer .col-12.position-relative.justify-content-center .show-desktop{
   width: 100%;
@@ -877,6 +1010,28 @@ footer .img-fluid{
 
 }
 
+footer .star-1{
+  left: 100px;
+  top: 150px;
+  animation:moveStar1 15s infinite linear;
+}
+
+footer .star-2{
+  left: 200px;
+  bottom: 30px;
+  animation:moveStar2 10s infinite linear;
+}
+
+footer .star-2 img{
+    max-width: 200px;
+}
+
+footer .star-3{
+  right: 100px;
+  top: 100px;
+  animation:moveStar3 20s infinite linear;
+}
+
 @media screen and (min-width: 577px) and (max-width: 1023px) {
   .about-swiper .swiper-slide {
     max-width: 400px; /* Ограничиваем ширину блока, чтобы он не растягивался */
@@ -893,10 +1048,6 @@ footer .img-fluid{
     display:block;
   }
 
-  .col-auto.text-end{
-    display: none;
-  }
-
   .show-desktop {
     display:none;
   }
@@ -909,10 +1060,19 @@ footer .img-fluid{
     display: none;
   }
 
-  .about .show-mobile .gravitas-regular {
-    font-size: 18px;
+  .traffistars .show-desktop{
+    display: inline-block;
+  }
+  .traffistars .show-mobile{
+    display: none;
   }
 
+  .about .show-mobile{
+    display: none;
+  }
+  .about .show-desktop{
+    display: flex;
+  }
 
 
   .parties_car .swiper-slide{
@@ -1011,6 +1171,30 @@ footer .img-fluid{
     display: none !important;
   }
 
+        footer .star-2{
+      left: unset;
+      top: unset;
+      right: 0;
+      top: 150px;
+      z-index: 5;
+      animation: moveStar2 30s infinite linear;
+    }
+    footer .star-3{
+      left: unset;
+      top: unset;
+      right: 0px;
+      bottom:35px;
+      z-index: 5;
+    }
+    footer .star-1{
+      left: -20px;
+      top: 220px;
+      z-index: 5;
+    }
+    footer .star img{
+      max-width: 140px;
+    }
+
   footer .row{
     width: unset;
   }
@@ -1030,14 +1214,13 @@ footer .img-fluid{
   }
     header .img-fluid-girl{
       object-fit: cover;
-      max-height: unset !important;
-      max-width: 700px !important;
+
     }
     header .star-1{
       left: unset;
       top: unset;
       right: -30px;
-      bottom: 35%;
+      bottom: 50%;
       z-index: 5;
       transform: rotate(30deg);
     }
@@ -1051,13 +1234,16 @@ footer .img-fluid{
     }
     header .star-3{
       left: -30px;
-      bottom:32%;
+      bottom: 20%;
       z-index: 5;
       transform: rotate(-10deg);
     }
     header .star img{
       max-width: 133px;
     }
+
+    
+
     nav .container-fluid{
       padding: 0 20px;
     }
@@ -1069,19 +1255,92 @@ footer .img-fluid{
       width: calc(50% - 32px) !important;
       height: unset;
     }
-
-    .about-swiper .swiper-slide{
-      width: calc(60% - 32px) !important;
-      height: unset;
+    a.reg-lnk-2{
+      min-height: 56px;
     }
+
+    .traffistars{
+      margin-bottom: 0;
+    }
+    .traffistars .show-desktop{
+      display: none;
+    }
+    .traffistars .show-mobile{
+      display: block;
+    }
+    .traffistars-list{
+      flex-direction: column;
+      gap: 40px;
+    }
+    .traffistars .star{
+      display: none;
+    }
+
+    .about .show-mobile{
+    display: flex;
+  }
+  .about .show-desktop{
+    display: none;
+  }
+
+    .about-card-1{
+      --index: 1;
+    }
+    .about-card-2{
+      --index: 2;
+    }
+    .about-card-3{
+      --index: 3;
+    }
+    .about-card-4{
+      --index: 4;
+    }
+
+    .about{
+      padding-top: 56px !important;
+      padding-bottom: 36px !important;
+    }
+    .about .about-stack{
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(var(--cards), var(--cardHeight));
+      padding: 0 40px;
+      padding-bottom: calc((var(--cards) - 1) * var(--cardTopPd)) !important;
+      margin-bottom: 40px;
+    }
+
+    .about .about-stack p{
+      color: #fff;
+      font-size: 20px;
+    }
+    .about-stack .about-card{
+      padding: 0;
+      position: sticky;
+      top: 80px;
+      padding-top: calc((var(--index) - 1) * var(--cardTopPd)) !important;
+    }
+    .about-inner{
+      position: relative;
+      height: var(--cardHeight);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .about-stack img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+
 
     .about-swiper{
       margin-right: -12px !important;
       padding-bottom: 0 !important;
-    }
-
-    .about .col-12{
-      margin-top: 16px !important;
     }
 
     .parties{
@@ -1171,6 +1430,8 @@ footer .img-fluid{
       display: block !important;
     }
 
+
+
     .follow__text{
       margin-bottom: 32px;
     }
@@ -1190,7 +1451,9 @@ footer .img-fluid{
 
 @media screen and (max-width: 576px){
     .parties_car .swiper-slide{
-      width: calc(100% - 32px) !important;
+      width: calc(85% - 30px) !important;
+      border-radius: 28px;
+      overflow: hidden;
     }
     
     .about-swiper .swiper-slide{
@@ -1204,10 +1467,6 @@ footer .img-fluid{
     .text-party{
       margin-top: 16px;
       font-size: 28px !important;
-    }
-
-    header{
-      min-height: 100%;
     }
 
     .verticals-list{
