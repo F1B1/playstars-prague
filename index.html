@@ -59,7 +59,7 @@
   </head>
   <body>
 
-    <header style="position: relative;position: relative;max-width: 100vw;overflow: hidden;">
+    <header class="section-btn" style="position: relative;position: relative;max-width: 100vw;overflow: hidden;">
       <div class="position-absolute" style="width: 100%;max-height: 100vh;overflow: hidden;">
         <picture>
                   <source media="(max-width: 768px)" srcset="assets/images/header-bg-mobile.webp">
@@ -259,7 +259,7 @@
       </div>
     </section>
 
-    <section class="about" id="event" style="background: linear-gradient(180deg, #5D8BF7 0%, #1F00FF 100%); ">
+    <section class="about section-btn" id="event" style="background: linear-gradient(180deg, #5D8BF7 0%, #1F00FF 100%); ">
       <div class="container">
         <div class="col-12 pt-2 mt-2 pt-lg-0 text-center">
           <h4 class="mb-3 position-relative">✦ About PlayStars Party</h4>
@@ -577,7 +577,7 @@
       </div>
     </div>
 
-    <footer class="pt-5 position-relative" style="background: #5D8BF7;">
+    <footer class="pt-5 position-relative section-btn" style="background: #5D8BF7;">
       <div class="container position-relative pt-2 show-mobile" style="">
         <div class="row">
           <div class="col-12 px-0 position-relative justify-content-center">
@@ -753,7 +753,7 @@
         const hallLight = document.querySelectorAll('.hall-light');
         const hallWrapper = document.querySelectorAll('.hall-wrapper')
         const trafficStars = document.getElementById('traffic-stars');
-        const observer = new IntersectionObserver(entries => {
+        const observerHall = new IntersectionObserver(entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // включаем подсветку
@@ -769,7 +769,32 @@
         }, { threshold: 0.5 }); 
 
         hallWrapper.forEach(element => {
-          observer.observe(element);
+          observerHall.observe(element);
+        });
+
+        const sections = document.querySelectorAll('.section-btn');
+
+        const observerSection = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const section = entry.target;
+            const buttons = document.querySelectorAll('.btn')
+            
+            if (entry.isIntersecting) {
+              buttons.forEach(el => {
+                el.style.setProperty('--animation-state', 'running');
+              });
+            } else {
+               buttons.forEach(el => {
+                el.style.setProperty('--animation-state', 'paused');
+              });
+            }
+          });
+        }, {
+          threshold: 0.5
+        });
+
+        sections.forEach(btn => {
+          observerSection.observe(btn);
         });
 
         window.addEventListener('scroll', () => {

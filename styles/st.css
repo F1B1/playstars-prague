@@ -415,6 +415,7 @@ nav.header-active .icon-blue{
 .btn{
   position: relative;
   overflow: hidden;
+  --animation-state: paused;
 }
 .btn:after {
     content: "";
@@ -436,6 +437,7 @@ nav.header-active .icon-blue{
     animation-duration: 6s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    animation-play-state: var(--animation-state)
 }
 
 a.reg-lnk-2 {
