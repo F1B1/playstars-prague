@@ -184,8 +184,9 @@ h2{
 .parties_car .swiper-slide{
   width: calc(25% - 32px);
   height: unset;
-  min-height: 360px;
   min-height: clamp(360px, 50vh, 480px);
+  border-radius: 28px;
+  overflow: hidden;
 }
 
 .parties_list {
@@ -602,7 +603,7 @@ h4 {
 }
 
 .learn-link:hover{
-  background-color: rgba(224, 224, 224, .1);
+  background-color: #5D8BF7;
 }
 
 .bubble-2 {
@@ -1452,8 +1453,6 @@ footer .star-3{
 @media screen and (max-width: 576px){
     .parties_car .swiper-slide{
       width: calc(85% - 30px) !important;
-      border-radius: 28px;
-      overflow: hidden;
     }
     
     .about-swiper .swiper-slide{
@@ -1470,14 +1469,15 @@ footer .star-3{
     }
 
     .verticals-list{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      flex-direction: row-reverse;
+      margin-bottom: 30px;
     }
 
     .verticals-list .bubble {
       width: fit-content;
       display: flex;
-      justify-self: flex-start; 
+      justify-self: flex-start;
+      background-color: #fff;
     }
 
     .verticals-list .bubble:nth-child(odd) {
