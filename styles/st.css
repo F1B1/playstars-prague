@@ -2,7 +2,7 @@
   --cards: 4;
   --cardHeight: 360px;
   --cardTopPd: 100px;
-  --cardGap: 40px;
+  --cardGap: 80px;
 }
 
 @font-face {
@@ -337,6 +337,10 @@ nav a.reg-lnk {
   border-radius: 12px;
 }
 
+nav a.reg-lnk {
+  --animation-state: running;
+}
+
 nav a.reg-lnk:hover{
   background-color: #ff6f31;
 }
@@ -400,15 +404,15 @@ nav .icon{
   transition: all 0.5s ease 0s;
 }
 
-nav .icon-blue{
+nav .icon-dark{
   opacity: 0;
 }
 
 nav.header-active li a{
-  color: #1F00FF;
+  color: #000;
 }
 
-nav.header-active .icon-blue{
+nav.header-active .icon-dark{
   opacity: 1;
 }
 
@@ -904,7 +908,7 @@ h4 {
   height: 2px;
   background: #fff;
   border-radius: 2px;
-  transition: 0.3s;
+  transition: all 0.5s ease 0s;
   position: relative;
 }
 
@@ -1314,6 +1318,10 @@ footer .star-3{
       max-width: 133px;
     }
 
+    .nav_logo svg{
+      max-width: 95px !important;
+    }
+
     
 
     nav .container-fluid{
@@ -1322,6 +1330,14 @@ footer .star-3{
     nav.header-active li a{
       color: #fff;
     }
+    nav.header-active .burger span{
+      background: #000;
+    }
+    nav a.reg-lnk{
+      font-size: 14px;
+      padding: 9px 14px;
+    }
+
     .burger{
       display: flex !important;
     }
@@ -1382,7 +1398,6 @@ footer .star-3{
       grid-template-rows: repeat(var(--cards), calc(var(--cardHeight) - var(--cardGap)));
       padding: 0 40px;
       padding-bottom: calc(var(--cards)  * var(--cardTopPd)) !important;
-      margin-bottom: -12px;
     }
 
     .about .about-stack p{
