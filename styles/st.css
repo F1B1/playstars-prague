@@ -253,6 +253,7 @@ h2{
 
 #navbarCollapseD{
   display: flex !important;
+  margin-left: 100px;
 }
 
 #navbarCollapseD ul{
@@ -1134,6 +1135,10 @@ footer .star-3{
 
   header img.show-mobile{
     display: none;
+  }
+
+  #navbarCollapseD{
+    margin-left: 0px;
   }
 
   .traffistars .show-desktop{
