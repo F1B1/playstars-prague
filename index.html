@@ -318,8 +318,7 @@
           <div class="row mt-5 pb-5 show-desktop">
             <div class="row position-relative">
               <div class="col-12 pt-1 pt-lg-2 pb-3 pb-lg-4 text-center">
-                <img src="assets/images/about.png">
-              
+                <img src="assets/images/about.webp">
               </div>
             </div>
           </div>
@@ -567,7 +566,12 @@
       <div class="container position-relative pt-2 show-mobile" style="">
         <div class="row">
           <div class="col-12 px-0 position-relative justify-content-center">
-            <img class="img-fluid" style="height: 100vh; object-fit: cover;" src="assets/images/footer-mobile.png" />
+            <picture class="mobile-footer">
+                <source srcset="assets/images/footer-mobile.webp" media="(max-width: 768px)">
+                <img src="assets/images/footer-mobile.webp" alt="Footer mobile version" 
+                    style="height: 100vh; object-fit: cover; width: 100%;">
+              </picture>
+
           </div>
         </div>
         <div class="position-absolute d-flex align-items-center justify-content-center  start-0 top-0 w-100 h-100">
@@ -619,7 +623,12 @@
       <div class="container pt-4 show-desktop" style="">
         <div class="row">
           <div class="col-12 position-relative justify-content-center">
-            <img class="show-desktop" style="margin-left: -10px;" src="assets/images/footer.png" />
+              
+              <picture class="desktop-footer">
+                <source srcset="assets/images/footer.png" media="(min-width: 769px)">
+                <img src="" alt="Footer desktop version" 
+                    style="margin-left: -10px; width: 100%;">
+              </picture>
               <div class="position-absolute d-flex align-items-center justify-content-center start-0 top-0 w-100 h-100">
               <div class="row d-flex align-items-center flex-column justify-content-center pt-5">
                 <div class="col-12 pt-5 fs-4 d-flex align-items-center justify-content-center" style="margin-bottom:26px;">

@@ -1109,6 +1109,8 @@ footer .star-3{
   animation:moveStar3 20s infinite linear;
 }
 
+
+
 @media screen and (min-width: 577px) and (max-width: 1023px) {
   .about-swiper .swiper-slide {
     max-width: 400px; /* Ограничиваем ширину блока, чтобы он не растягивался */
