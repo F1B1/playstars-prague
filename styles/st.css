@@ -905,10 +905,6 @@ h4 {
   position: relative;
   transition: all 0.3s ease 0s;
 }
-.traffistars-redirect a:hover{
-  color: #4C33FF !important;
-}
-
 .traffistars-redirect a img{
   margin-left: 6px;
 }
@@ -930,7 +926,7 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  cursor: pointer;
+cursor: pointer;~
   z-index: 1001;
   position: relative;
   gap: 4px;
