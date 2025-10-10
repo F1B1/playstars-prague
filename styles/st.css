@@ -1456,17 +1456,21 @@ footer .star-3{
       max-width: unset;
       min-height: var(--cardHeight);
     }
+
     .traffistars-redirect a{
-      width: 100%;
       display: flex;
       align-items:center;
       justify-content: center;
+      margin: 0 20px;
     }
     .traffistars-redirect a::after{
       content: none;
     }
     .traffistars__text{
       margin-bottom: 0;
+    }
+    .traffistars-list{
+      padding: 0 20px;
     }
     
 
@@ -1645,7 +1649,7 @@ footer .star-3{
 
     .learn-link{
       width: 100% !important;
-      margin: 0 30px;
+      margin: 0 10px;
     }
 }
 
