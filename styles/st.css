@@ -908,15 +908,7 @@ h4 {
 .traffistars-redirect a:hover{
   color: #4C33FF !important;
 }
-.traffistars-redirect a::after{
-  content: '';
-  position: absolute;
-  width: 102px;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: #1F00FF;
-}
+
 .traffistars-redirect a img{
   margin-left: 6px;
 }
