@@ -758,13 +758,8 @@ h4 {
   justify-content: center;
 }
 
-.future-cards__copy > div {
-  width: 186px;
-  height: 171px;
-}
 
-
-  .future-cards__copy:nth-child(2) {
+.future-cards__copy:nth-child(2) {
     display: none !important;
   }
 .future-cards__copy > div:nth-child(n+4) {
@@ -1083,6 +1078,17 @@ header nav .col-md-8.down .navbar-nav{
   100% { transform: translate(0, 0); }
 }
 
+@-webkit-keyframes moveGirl1{
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(10px, 10px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes moveGirl1{
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(10px, 10px); }
+  100% { transform: translate(0, 0); }
+}
+
 @keyframes blick {
   0% { left: -30px; margin-left: 0px; }
   30% { left: 110%; margin-left: 80px; }
@@ -1120,6 +1126,17 @@ footer .star-1{
   left: 100px;
   top: 150px;
   animation:moveStar1 15s infinite linear;
+   filter: none !important;
+  transform: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  perspective: none !important;
+  image-rendering: auto !important;
+  
+  /* Принудительная четкость */
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 footer .star-2{
@@ -1136,6 +1153,32 @@ footer .star-3{
   right: 100px;
   top: 100px;
   animation:moveStar3 20s infinite linear;
+}
+
+footer .girl-1{
+  left: 180px;
+  bottom: 250px;
+  animation:moveGirl1 10s infinite ease-in-out;
+}
+footer .girl-2{
+  left: 300px;
+  top: 100px;
+  animation:moveGirl1 11s infinite ease-in-out;
+}
+footer .girl-3{
+  right: 300px;
+  top: 0px;
+  animation:moveGirl1 12s infinite ease-in-out;
+}
+footer .girl-4{
+  right: 100px;
+  top: 40%;
+  animation:moveGirl1 13s infinite ease-in-out;
+}
+footer .girl-5{
+  right: 350px;
+  bottom: 80px;
+  animation:moveGirl1 14s infinite ease-in-out;
 }
 
 
@@ -1239,20 +1282,56 @@ footer .star-3{
     padding: 9.5px 20px !important;
   }
 
+  .guest{
+    padding-bottom: 48px;
+  }
+    .guest .container{
+      overflow: hidden;
+    }
+
+    .future-cards{
+      display: flex;
+      flex-wrap: nowrap;
+      width: fit-content;
+      animation: scroll 20s linear infinite;
+      gap: 24px;
+    }
+
+    .guest h2{
+      font-size: 24px;
+    }
+
+    .future-cards__copy > div:nth-child(n+4) {
+      display: block;
+    }
+
+    .future-cards__copy:nth-child(2) {
+        display: flex  !important;
+    }
+
+    .future-cards__copy {
+      width: unset;
+      display: flex;
+      justify-content: stretch !important;
+    }
+
+    .future-cards__copy > div {
+      flex-shrink: 0;
+    }
+
   .future-cards__copy {
     display: flex !important;             
     flex-wrap: nowrap !important;         
     overflow-x: auto;                     
     scroll-snap-type: x mandatory;        
     -webkit-overflow-scrolling: touch;    
-    gap: 16px;                            
+    gap: 24px;                            
     padding: 8px 0;                       
   }
 
   .future-cards__copy > div {
     flex: 0 0 auto;                       
-    width: 186px;                         
-    height: 171px;                        
+                    
   }
 
   .future-cards__copy > * {
@@ -1312,6 +1391,10 @@ footer .star-3{
     footer .star img{
       max-width: 140px;
     }
+
+  footer .girl-1, .girl-2, .girl-3, .girl-4, .girl-5{
+    display: none;
+  }
 
   footer .row{
     width: unset;
@@ -1578,35 +1661,6 @@ footer .star-3{
       top: 0;
     }
 
-    .future .container{
-      overflow: hidden;
-    }
-
-    .future-cards{
-      display: flex;
-      flex-wrap: nowrap;
-      width: fit-content;
-      animation: scroll 10s linear infinite;
-    }
-
-    .future-cards__copy > div:nth-child(n+4) {
-      display: block;
-    }
-
-    .future-cards__copy:nth-child(2) {
-        display: flex  !important;
-    }
-
-    .future-cards__copy {
-      width: unset;
-      display: flex;
-      justify-content: stretch !important;
-    }
-
-    .future-cards__copy > div {
-      flex-shrink: 0;
-      padding: 0 15px;
-    }
 
 
      footer .show-desktop{
