@@ -478,6 +478,47 @@ a.reg-lnk-2:focus{
   display: none;
 }
 
+.about-wrapper{
+  display: flex;
+}
+.about-wrapper .about-inner{
+  width: calc(25% + 55px);
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease 0s;
+}
+.about-wrapper .about-inner:hover{
+  transform: translateY(-25px);
+}
+.about-wrapper .about-inner:not(:first-child) {
+  margin-left: -75px;
+}
+.about-wrapper .about-inner img{
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.about-wrapper .about-inner p{
+  text-align: left;
+}
+
+.about-inner-1{
+  z-index: 1;
+}
+.about-inner-2{
+  z-index: 2;
+}
+.about-inner-3{
+  z-index: 3;
+}
+.about-inner-4{
+  z-index: 4;
+}
+
+
 
 
 /* fonts */
@@ -1233,6 +1274,9 @@ footer .girl-5{
   }
   .about .show-desktop{
     display: flex;
+  }
+  .about-inner{
+    font-size: 18px;
   }
 
 
