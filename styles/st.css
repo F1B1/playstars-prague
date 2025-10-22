@@ -1197,29 +1197,39 @@ footer .star-3{
 }
 
 footer .girl-1{
-  left: 180px;
-  bottom: 250px;
-  animation:moveGirl1 10s infinite ease-in-out;
-}
-footer .girl-2{
-  left: 300px;
-  top: 100px;
+  left: 200px;
+  top: 300px;
   animation:moveGirl1 11s infinite ease-in-out;
 }
-footer .girl-3{
+footer .girl-2{
   right: 300px;
-  top: 0px;
+  top: 100px;
   animation:moveGirl1 12s infinite ease-in-out;
-}
-footer .girl-4{
-  right: 100px;
-  top: 40%;
-  animation:moveGirl1 13s infinite ease-in-out;
-}
-footer .girl-5{
+} 
+footer .girl-3{
   right: 350px;
   bottom: 80px;
   animation:moveGirl1 14s infinite ease-in-out;
+}
+.girl p{
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  padding: 7.5px 12px;
+  border-radius: 100px;
+  width: fit-content;
+  margin: 0px auto;
+  margin-top: -20px;
+  position: relative;
+  z-index: 1;
+}
+.girl-1 p{
+  background-color: #84D900;
+}
+.girl-2 p{
+  background-color: #FF550C;
+}
+.girl-3 p{
+  background-color: #7D62F4;
 }
 
 
@@ -1344,6 +1354,38 @@ footer .girl-5{
     .guest h2{
       font-size: 24px;
     }
+    @keyframes snakeMove {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-15px);
+      }
+      50% {
+        transform: translateY(0);
+      }
+
+    }
+
+    .guest .girl{
+      transition: transform 0.6s ease-in-out;
+      animation: snakeMove 3s ease-in-out infinite;
+    }
+
+    .girl:nth-child(1) { animation-delay: 0s; }
+    .girl:nth-child(2) { animation-delay: 0.2s; }
+    .girl:nth-child(3) { animation-delay: 0.4s; }
+    .girl:nth-child(4) { animation-delay: 0.6s; }
+    .girl:nth-child(5) { animation-delay: 0.8s; }
+    .girl:nth-child(6) { animation-delay: 1s; }
+
+    /* Для второй копии - обратный порядок для плавности */
+    .future-cards__copy:nth-child(2) .girl:nth-child(1) { animation-delay: 1.5s; }
+    .future-cards__copy:nth-child(2) .girl:nth-child(2) { animation-delay: 1.7s; }
+    .future-cards__copy:nth-child(2) .girl:nth-child(3) { animation-delay: 1.9s; }
+    .future-cards__copy:nth-child(2) .girl:nth-child(4) { animation-delay: 2.1s; }
+    .future-cards__copy:nth-child(2) .girl:nth-child(5) { animation-delay: 2.3s; }
+    .future-cards__copy:nth-child(2) .girl:nth-child(6) { animation-delay: 2.5s; }
 
     .future-cards__copy > div:nth-child(n+4) {
       display: block;
@@ -1365,8 +1407,7 @@ footer .girl-5{
 
   .future-cards__copy {
     display: flex !important;             
-    flex-wrap: nowrap !important;         
-    overflow-x: auto;                     
+    flex-wrap: nowrap !important;                              
     scroll-snap-type: x mandatory;        
     -webkit-overflow-scrolling: touch;    
     gap: 24px;                            
@@ -1382,7 +1423,6 @@ footer .girl-5{
     margin: 0 !important;
   }
 
-  /* По желанию спрятать полосу прокрутки */
   .future-cards__copy::-webkit-scrollbar { display: none; }
   .swiper-buttons {
     padding: 28px 20px !important;
@@ -1436,7 +1476,7 @@ footer .girl-5{
       max-width: 140px;
     }
 
-  footer .girl-1, .girl-2, .girl-3, .girl-4, .girl-5{
+  footer .girl{
     display: none;
   }
 
@@ -1654,6 +1694,10 @@ footer .girl-5{
     }
     .parties{
       padding-top: 1em !important;
+    }
+
+    .guest .girl img{
+      max-width: 120px;
     }
 
     
