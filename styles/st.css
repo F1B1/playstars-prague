@@ -1375,7 +1375,7 @@ footer .girl-5{
         transform: translateY(0);
       }
       25% {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
       }
       50% {
         transform: translateY(0);
@@ -1386,6 +1386,8 @@ footer .girl-5{
     .guest .girl{
       transition: transform 0.6s ease-in-out;
       animation: snakeMove 3s ease-in-out infinite;
+      will-change: transform;
+      transform: translateZ(0);
     }
 
     .girl:nth-child(1) { animation-delay: 0s; }
@@ -1844,5 +1846,6 @@ footer .girl-5{
     display:none !important;
   }
 }
+
 
 
